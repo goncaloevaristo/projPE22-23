@@ -16,5 +16,4 @@ meu_plot + geom_line(aes(y = y1, color = "ddesemp")) +
   labs(x = "Year", y = "Value", color = "Variables") +
   scale_color_manual(values = c("ddesemp" = "red", "ndesemp" = "blue"))
   ```
-
 ![Gráfico](/1.png)
