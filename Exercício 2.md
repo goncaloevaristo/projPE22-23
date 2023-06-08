@@ -15,5 +15,4 @@ data <- data.frame(
     labs(x = "Occupation", y = "Time") +
     ggtitle("Comparison of Average Daily Time in Two Occupations")
   ```
-
 ![Gráfico](/2.png)
