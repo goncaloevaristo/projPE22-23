@@ -1,3 +1,5 @@
+# Exercício 8
+```Rstudio
 # Fixar a semente
 set.seed(1961)
 
@@ -34,3 +36,5 @@ abline(a = 0, b = 1, lty = 2)
 # Adicionar legenda
 legend("bottomright", legend = c("Distribuição de Cauchy", "Distribuição Normal", "Reta Bissectriz"),
        col = c("blue", "red", "black"), lty = c(1, 1, 2), bty = "n")
+  ```
+![Gráfico](/8.png)
