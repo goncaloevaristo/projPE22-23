@@ -14,10 +14,10 @@ mydata_women <- subset(mydata,
                          Indicator == "Unemployment rate, by sex and age group" &
                          (Age.Group == "15-24" | Age.Group == "25-54" | Age.Group == "55-64"))
 df <- data.frame(
-  gender = c(rep("Women", 3), rep("Men", 3)),
+  Gender = c(rep("Women", 3), rep("Men", 3)),
   age_group = c(rep(c("15-24", "25-54", "55-64"), 2)),
   value = c(mydata_women$Value, mydata_men$Value)
 )
-ggplot(df, aes(x = age_group, y = value, fill = gender)) +
+ggplot(df, aes(x = age_group, y = value, fill = Gender)) +
   geom_bar(stat = "identity", position = position_dodge()) +
   labs(x = "Age Group", y = "Unemployment Rate", title = "Comparison of Women and Men by Age Group")
