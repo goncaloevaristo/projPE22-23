@@ -15,7 +15,7 @@ amostra_ordenada_cauchy <- sort(amostra_cauchy)
 quantis_cauchy <- seq(1, 109) / (109 + 1)
 
 # Gerar uma amostra da distribuição normal
-amostra_normal <- rnorm(109, mean = 2.2, sd = sqrt(1.8))
+amostra_normal <- qnorm(quantis_cauchy, mean = 2.2, sd = sqrt(1.8))
 
 # Ordenar os valores da amostra normal
 amostra_ordenada_normal <- sort(amostra_normal)
