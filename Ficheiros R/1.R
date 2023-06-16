@@ -1,6 +1,6 @@
 library(ggplot2)
 library(readxl)
-econ <-read_excel( "/home/goncaloevaristo/Documents/PE/Projeto/econ.xlsx")
+econ <-read_excel( "/home/goncaloevaristo/Documentos/PE/Projeto/econ.xlsx")
 filtro <- subset(econ, tempo > "1990-12-01")
 ddesemp <- filtro$ddesemp
 ndesemp <- filtro$ndesemp
