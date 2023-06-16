@@ -1,5 +1,5 @@
 library(ggplot2)
-mydata <-read.table( "/home/goncaloevaristo/Documents/PE/Projeto/GENDER_EMP_19032023152556091.txt",header = TRUE, sep = "\t")
+mydata <-read.table( "/home/goncaloevaristo/Documentos/PE/Projeto/GENDER_EMP_19032023152556091.txt",header = TRUE, sep = "\t")
 # Filter the data
 mydata_men <- subset(mydata, 
                      Country == "Canada" & 

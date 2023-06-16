@@ -1,5 +1,5 @@
 library(ggplot2)
-mydata <-read.csv( "/home/goncaloevaristo/Documents/PE/Projeto/TIME_USE_24092022.csv")
+mydata <-read.csv( "/home/goncaloevaristo/Documentos/PE/Projeto/TIME_USE_24092022.csv")
 mydata <- subset(mydata, País != "África do Sul")
 mydata_lazer <- subset(mydata, Sexo == "Total" & Ocupação == "Lazer")
 mydata_trabalho <- subset(mydata, Sexo == "Total" & Ocupação == "Trabalho não remunerado")
