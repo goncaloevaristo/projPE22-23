@@ -2,7 +2,7 @@
 ```Rstudio
 library(ggplot2)
 library(readxl)
-econ <-read_excel( "/home/goncaloevaristo/Documents/PE/Projeto/econ.xlsx")
+econ <-read_excel( "/home/goncaloevaristo/Documentos/PE/Projeto/econ.xlsx")
 filtro <- subset(econ, tempo > "1990-12-01")
 ddesemp <- filtro$ddesemp
 ndesemp <- filtro$ndesemp
@@ -16,4 +16,5 @@ meu_plot + geom_line(aes(y = y1, color = "ddesemp")) +
   labs(x = "Year", y = "Value", color = "Variables") +
   scale_color_manual(values = c("ddesemp" = "red", "ndesemp" = "blue"))
   ```
+
 ![Gráfico](/1.png)
