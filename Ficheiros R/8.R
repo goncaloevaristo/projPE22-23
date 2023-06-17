@@ -1,36 +1,33 @@
+library(ggplot2)
+
 # Fixar a semente
 set.seed(1961)
 
 # Definir os parâmetros da distribuição de Cauchy
 localizacao_cauchy <- -1.4
 escala_cauchy <- 1.8
+n <- 109
 
 # Gerar a amostra da distribuição de Cauchy
-amostra_cauchy <- rcauchy(109, location = localizacao_cauchy, scale = escala_cauchy)
+sample_cauchy <- rcauchy(n, location = localizacao_cauchy, scale = escala_cauchy)
 
 # Ordenar os valores da amostra de Cauchy
-amostra_ordenada_cauchy <- sort(amostra_cauchy)
+sample_ordered_cauchy <- sort(sample_cauchy)
 
 # Gerar os quantis de probabilidade da distribuição de Cauchy
-quantis_cauchy <- seq(1, 109) / (109 + 1)
+quantis <- seq(1, n) / (n + 1)
+
+#Cálculo dos quantis da distribuição de Cauchy
+cauchy <- quantile(sample_ordered_cauchy,quantis)
 
 # Gerar uma amostra da distribuição normal
-amostra_normal <- qnorm(quantis_cauchy, mean = 2.2, sd = sqrt(1.8))
+normal <- qnorm(quantis, mean = 2.2, sd = sqrt(1.8))
 
-# Ordenar os valores da amostra normal
-amostra_ordenada_normal <- sort(amostra_normal)
+cauchydata <- data.frame(Quantil = sample_ordered_cauchy, Valor = cauchy)
+normaldata <- data.frame(Quantil = sample_ordered_cauchy, Valor = normal)
 
-# Gerar os quantis de probabilidade da distribuição normal
-quantis_normal <- seq(1, 109) / (109 + 1)
-
-# Criar o gráfico
-plot(amostra_ordenada_cauchy, quantis_cauchy, type = "l", col = "blue",
-     xlab = "Valores Gerados (Distribuição de Cauchy)", ylab = "Quantis de Probabilidade",
-     main = "Valores Gerados vs. Quantis de Probabilidade",
-     xlim = c(-15, 15), ylim = c(0, 1))
-lines(amostra_ordenada_normal, quantis_normal, type = "l", col = "red")
-abline(a = 0, b = 1, lty = 2)
-
-# Adicionar legenda
-legend("bottomright", legend = c("Distribuição de Cauchy", "Distribuição Normal", "Reta Bissectriz"),
-       col = c("blue", "red", "black"), lty = c(1, 1, 2), bty = "n")
+ggplot() + geom_point(data = cauchydata, aes(x= Valor, y = Quantil, color = "Cauchy")) +
+  geom_point(data = normaldata, aes(x= Valor, y = Quantil, color = "Normal")) +
+  geom_abline(intercept = 0, slope = 1, linetype = "dashed") + 
+  labs(y = "Quantis de Probabilidade", x = "Valores ordenados", title = "Amostras Normal e Cauchy") +
+  guides(color = guide_legend(title = "Variáveis")) + xlim(-25, 10) + ylim(-25, 25)
