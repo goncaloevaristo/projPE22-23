@@ -7,7 +7,7 @@ filtro <- subset(econ, tempo > "1990-12-01")
 ddesemp <- filtro$ddesemp
 ndesemp <- filtro$ndesemp
 t <- filtro$tempo
-y1 <- (ddesemp- mean(ddesemp))/sd(ddesemp)
+y1 <- (ddesemp-mean(ddesemp))/sd(ddesemp)
 y2 <- (ndesemp-mean(ndesemp))/sd(ndesemp)
 dados <- data.frame(tempo = t)
 meu_plot <- ggplot(data = dados, aes(x = tempo))

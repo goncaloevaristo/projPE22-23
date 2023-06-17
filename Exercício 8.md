@@ -37,4 +37,4 @@ abline(a = 0, b = 1, lty = 2)
 legend("bottomright", legend = c("Distribuição de Cauchy", "Distribuição Normal", "Reta Bissectriz"),
        col = c("blue", "red", "black"), lty = c(1, 1, 2), bty = "n")
   ```
-![Gráfico](/8.png)
+<img src="/8.png" width="65%">
