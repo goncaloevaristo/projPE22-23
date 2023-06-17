@@ -7,3 +7,4 @@ potencias_de_dois_2_ou_8 <- potencias_de_dois[substr(as.character(potencias_de_d
 frac_2_ou_8 <- length(potencias_de_dois_2_ou_8) / length(potencias_de_dois)
 
 desvio_absoluto <- abs(p - frac_2_ou_8)
+round(desvio_absoluto, 4)

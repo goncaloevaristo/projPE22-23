@@ -7,7 +7,6 @@ mydata_trabalho <- subset(mydata, Sexo == "Total" & Ocupação == "Trabalho não
 data <- data.frame(
   Occupation = rep(c("Leisure", "Unpaid work"), each = nrow(mydata_lazer)),
   Tempo = c(mydata_lazer$Tempo, mydata_trabalho$Tempo))
-  
   ggplot(data, aes(x = Occupation, y = Tempo, fill = Occupation)) +
     geom_boxplot() +
     labs(x = "Occupation", y = "Time") +
