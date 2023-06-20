@@ -13,7 +13,7 @@ s <- cumsum(amostra)
 T <- ceiling(s[1087])
 
 # Dividindo o intervalo ]0,T] em intervalos de amplitude 1
-limites <- seq(1, T, by = 1)
+limites <- seq(0, T, by = 1)
 
 # Contando o número de eventos em cada subintervalo
 contagem <- table(cut(s, breaks = limites, right = FALSE))
